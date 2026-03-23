@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  padding: 15px 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.logo {
+  color: white;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* Base link */
+.nav-link {
+  position: relative;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px;
+  transition: 0.3s;
+}
+
+/* Hover */
+.nav-link:hover {
+  color: white;
+}
+
+/* Active */
+.nav-link.active {
+  color: #00ffcc;
+  font-weight: bold;
+}
+
+/* Underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #00ffcc;
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* COMMON */
+.container {
+  padding: 40px;
+}
+
+/* HOME */
+.hero {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  padding: 60px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* PRODUCTS GRID */
+.products-preview {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+/* Hover card */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* ABOUT */
+.about-section {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  line-height: 1.6;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* CONTACT */
+.contact-form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Button */
+.contact-form button {
+  padding: 12px;
+  background: #0072ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #005bd1;
+}
+
+/* NOT FOUND */
+.notfound {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.notfound button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #0072ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.notfound button:hover {
+  background: #005bd1;
+}
