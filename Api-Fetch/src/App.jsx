@@ -1,19 +1,28 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
+import Loader from "./Loading/Loadex";
 const App = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     // fetch("https://fakestoreapi.com/products")
     //   .then((res) => res.json())
     //   .then((data) => setProducts(data));
 
-    axios.get("https://fakestoreapi.com/products").then((res) => {
-      setProducts(res.data);
-    }).catch((err)=>{
-      console.log("error while fecthing data : ",err)
-    });
+    axios
+      .get("https://fakestoreapi.com/products")
+      .then((res) => {
+        setProducts(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+        setError("please try after sometime");
+        console.log("error while fecthing data : ", err);
+      });
   }, []);
   return (
     <div className="products-container">
@@ -34,6 +43,8 @@ const App = () => {
           </div>
         ))}
       </div>
+      <div>{loading && <Loader />}</div>
+      <div>{error && <h2>{error}</h2>}</div>
     </div>
   );
 };
